@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 @FeignClient(name = "identity-service", url = "${idp.url}")
 public interface IdentityClient {
-    @PostMapping(
-            value = "/realms/devteria/protocol/openid-connect/token",
+    @PostMapping(value = "/realms/devteria/protocol/openid-connect/token",
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     TokenExchangeResponse exchangeToken(@QueryMap TokenExchangeParam param);
 
